@@ -12,6 +12,7 @@ from livescore import urls as livescore_urls
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
+    path('tinymce/', include('tinymce.urls')),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     path("live-cricket-score/", include(livescore_urls)),
