@@ -1,0 +1,15 @@
+{% load wagtailimages_tags %}
+
+<div class="team-card col-sm-4">
+    <a class="team-card__link" href="{{page.url}}">
+        <figure class="team-card__image">
+            {% image page.image fill-430x320-c100 loading="lazy" %}
+        </figure>
+        <div class="team-card__contents">
+            <h3 class="team-card__title">{{page.title}}</h3>
+            {% if page.introduction %}
+                <p class="team-card__text">{{ page.introduction|truncatewords:15 }}</p>
+            {% endif %}
+        </div>
+    </a>
+</div>
