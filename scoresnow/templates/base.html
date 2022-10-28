@@ -1,55 +1,274 @@
+
 {% load navigation_tags static wagtailuserbar wagtailfontawesome %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>
-            {% block title %}
-                {% if page.seo_title %}
-                    {{ page.seo_title }}
-                {% else %}
-                    {{ page.title }}
-                {% endif %}
-            {% endblock %}
-            {% block title_suffix %}
-                | The Wagtail Bakery
-            {% endblock %}
-        </title>
-        <meta name="description" content="{% if page.search_description %}{{ page.search_description }}{% endif %}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        {% fontawesome_css %}
-        <link rel="stylesheet" href="{% static 'css/font-marcellus.css' %}">
-        <link rel="stylesheet" href="{% static 'css/font-open-sans.css' %}">
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title %}
+        {% if page.seo_title %}
+        {{ page.seo_title }}
+        {% else %}
+        {{ page.title }}
+        {% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+        | The Wagtail Bakery
+        {% endblock %}
+    </title>
 
-    <body class="{% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}">
-        {% wagtailuserbar %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    {% fontawesome_css %}
+    <link rel="stylesheet" href="{% static 'css/font-marcellus.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-open-sans.css' %}">
 
-        {% block header %}
-            {% include "includes/header.html" with parent=site_root calling_page=self %}
-        {% endblock header %}
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-        {% block seriescrumbs %}
-            {# seriescrumbs is defined in base/templatetags/navigation_tags.py #}
-            {% seriescrumbs %}
-        {% endblock seriescrumbs %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-        {% block messages %}
-            {% include "includes/messages.html" %}
-        {% endblock messages %}
+</head>
 
-        <main>
-            {% block content %}
-            {% endblock content %}
-        </main>
 
-        <hr>
+<body>
+    <div class="container-fluid" style="background-color: rgb(101, 101, 164);">
+        <div class="slider">
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="ds-flex1">
+                            <a href="#">Live.6 Match,First Round Group A.</a>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="SL"><img width="10" height="10"
+                                alt="SL Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/340000/340047.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">SL</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">152/8</strong>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="UAE"><img width="10" height="10"
+                                alt="UAE Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313100/313147.logo.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">UAE</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">189/4</strong>
+                        </div>
+                        <div class="text1">
+                            <span>U.A.E. won by 7 runs</span>
+                            <span class="ds-text-compact-xxs ds-mr-0.5">(17.1/20 ov, T:153)</span>
+                        </div>
+                        <div class="ds-flex ds-mt-2 ds-pt-1.5 ds-border-t ds-border-line-default-translucent">
+                            <a href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Schedule</span></a>
+                                    <a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Table</span></a><a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Report</span></a><a
+                                href=#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Series</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="ds-flex1">
+                            <a href="#">Live.6 Match,First Round Group A.</a>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="SL"><img width="10" height="10"
+                                alt="SL Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/340000/340047.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">SL</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">152/8</strong>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="UAE"><img width="10" height="10"
+                                alt="UAE Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313100/313147.logo.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">UAE</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">189/4</strong>
+                        </div>
+                        <div class="text1">
+                            <span>U.A.E. won by 7 runs</span>
+                            <span class="ds-text-compact-xxs ds-mr-0.5">(17.1/20 ov, T:153)</span>
+                        </div>
+                        <div class="ds-flex ds-mt-2 ds-pt-1.5 ds-border-t ds-border-line-default-translucent">
+                            <a href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Schedule</span></a><a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Table</span></a><a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Report</span></a><a
+                                href=#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Series</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="ds-flex1">
+                            <a href="#">Live.6 Match,First Round Group A.</a>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="SL"><img width="10" height="10"
+                                alt="SL Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/340000/340047.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">SL</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">152/8</strong>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="UAE"><img width="10" height="10"
+                                alt="UAE Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313100/313147.logo.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">UAE</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">189/4</strong>
+                        </div>
+                        <div class="text1">
+                            <span>U.A.E. won by 7 runs</span>
+                            <span class="ds-text-compact-xxs ds-mr-0.5">(17.1/20 ov, T:153)</span>
+                        </div>
+                        <div class="ds-flex ds-mt-2 ds-pt-1.5 ds-border-t ds-border-line-default-translucent">
+                            <a href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Schedule</span></a><a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Table</span></a><a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Report</span></a><a
+                                href=#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Series</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="ds-flex1">
+                            <a href="#">Live.6 Match,First Round Group A.</a>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="SL"><img width="10" height="10"
+                                alt="SL Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/340000/340047.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">SL</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">152/8</strong>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="UAE"><img width="10" height="10"
+                                alt="UAE Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313100/313147.logo.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">UAE</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">189/4</strong>
+                        </div>
+                        <div class="text1">
+                            <span>U.A.E. won by 7 runs</span>
+                            <span class="ds-text-compact-xxs ds-mr-0.5">(17.1/20 ov, T:153)</span>
+                        </div>
+                        <div class="ds-flex ds-mt-2 ds-pt-1.5 ds-border-t ds-border-line-default-translucent">
+                            <a href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Schedule</span></a><a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Table</span></a><a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Report</span></a><a
+                                href=#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Series</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="ds-flex1">
+                            <a href="#">Live.6 Match,First Round Group A.</a>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="SL"><img width="10" height="10"
+                                alt="SL Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/340000/340047.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">SL</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">152/8</strong>
+                        </div>
+                        <div class="ds-flex ds-items-center ds-min-w-0 ds-mr-1" title="UAE"><img width="10" height="10"
+                                alt="UAE Flag" class="ds-mr-2"
+                                src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313100/313147.logo.png">
+                            <p class="ds-text-tight-s ds-font-bold ds-capitalize ds-truncate">UAE</p>
+                        </div>
+                        <div class="ds-text-compact-s ds-text-typo-title ds-text-right ds-whitespace-nowrap">
+                            <span class="ds-text-compact-xxs ds-mr-0.5"></span><strong class="">189/4</strong>
+                        </div>
+                        <div class="text1">
+                            <span>U.A.E. won by 7 runs</span>
+                            <span class="ds-text-compact-xxs ds-mr-0.5">(17.1/20 ov, T:153)</span>
+                        </div>
+                        <div class="ds-flex ds-mt-2 ds-pt-1.5 ds-border-t ds-border-line-default-translucent">
+                            <a href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Schedule</span></a><a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Table</span></a><a
+                                href="#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Report</span></a><a
+                                href=#" class="ds-inline-flex ds-items-start ds-leading-none ds-mr-4"><span
+                                    class="ds-text-compact-xs ds-font-medium ds-text-ui-typo hover:ds-underline hover:ds-decoration-ui-stroke ds-block">Series</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        {% include "includes/footer.html" %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="module" src="{% static 'js/main.js' %}"></script>
 
-        <script type="module" src="{% static 'js/main.js' %}"></script>
-    </body>
+
+
+    {% wagtailuserbar %}
+
+    {% block header %}
+    {% include "includes/header.html" with parent=site_root calling_page=self %}
+    {% endblock header %}
+
+    {% block seriescrumbs %}
+    {# seriescrumbs is defined in base/templatetags/navigation_tags.py #}
+    {% seriescrumbs %}
+    {% endblock seriescrumbs %}
+
+    {% block messages %}
+    {% include "includes/messages.html" %}
+    {% endblock messages %}
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <hr>
+
+    {% include "includes/footer.html" %}
+
+</body>
+
 </html>

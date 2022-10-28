@@ -1,3 +1,12 @@
+$('.slider').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  dots: false,
+  infinite: true,
+  cssEase: 'linear'
+});
+
+
 const navigation = document.querySelector('[data-navigation]');
 const mobileNavigation = navigation.querySelector('[data-mobile-navigation]');
 const body = document.querySelector('body');
@@ -22,3 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleMobileNavigation();
   });
 });
+
+
