@@ -849,13 +849,13 @@ blockquote .attribute-name {
   display: inline-block;
   color: white;
   font-family: var(--font--primary);
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1.5rem;
   line-height: 1.25;
   margin: 0;
   position: relative;
-  width: 82px;
-  height: 44px;
+  width: 110px;
+  height: 40px;
 }
 
 @media (min-width: 1150px) {
@@ -1158,71 +1158,84 @@ footer {
   text-transform: capitalize;
 }
 
-/* start side banner */
+/* start side banner (Most Read) */
 
-.blog-list1{
-  width: 100%;
+.head1{
+  font-weight: 700;
+  font-size: 25%;
+  margin-left: 10px;
+}
+
+.blog-list_1{
+  width: 75%;
+  height: 10%;
+  border-width: 0;
   background-color: #f5f3e9;
   border-radius: 0.5rem;
-  border-color: #333;
 }
-.blog-listing-card1 {
+.blog-listing-card_1 {
   padding-bottom: 20px;
   width: 100%;
 }
-.blog-listing-card__image1 {
+/* .blog-listing-card__image1 {
   width: 20%;
   overflow: hidden;
   margin: 0;
-  border-radius: 0.1rem;
-  padding-top: 25px;
+  padding-top: 12px;
   padding-left: 10px;
-}
+} */
 
-.blog-listing-card__image1 img {
+.blog-listing-card__image_1 img {
   transition: transform ease 0.2s;
 }
 
-.blog-listing-card1:hover .blog-listing-card__image1 img {
+.blog-listing-card1:hover .blog-listing-card__image_1 img {
   transform: scale(1.05);
 }
 
-.blog-listing-card__contents1 {
-  padding-top: 25px;
+.blog-listing-card__contents_1 {
+  padding-top: 10px;
 }
 
-.blog-listing-card__title1 {
+.blog-listing-card__title_1 {
   font-size: 1.150rem;
   line-height: 1.1;
   color: var(--orange);
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 1px;
   margin-left: 5px;
+  font-weight: 700;
 }
 
-.blog-listing-card__introduction1 {
+.blog-listing-card__introduction_1 {
   font-size: var(--font-sm);
   line-height: 1.5;
   color: var(--dark);
-  margin-bottom: 8px;
-  max-width: 200px;
+  margin-bottom: 1px;
+  max-width: 150px;
   margin-left: 5px;
+  font-weight: 500;
 }
 
-.blog-listing-card__metadata1 {
+.blog-listing-card__metadata_1 {
   font-size: 0.875rem;
   line-height: 1.43;
   color: var(--grey);
-  margin-bottom: 0;
+  margin-bottom: 1px;
   margin-left: 5px;
   margin-right: 5px;
+  font-weight: 400;
 }
 
-.blog-listing-card__image1 {
-  width: 25%;
+.blog-listing-card__image_1 {
+  width: 28%;
   overflow: hidden;
   margin: 0;
+  padding-top: 12px;
+  padding-left: 10px;
+
 }
+
 /* endside banner */
 
 
@@ -1577,7 +1590,13 @@ input[type='radio'] {
 
 /* Homepage */
 
-/* #region -- Hero -- */
+/* #region -- Hero --970/250 */
+
+
+
+
+
+
 .homepage .hero {
   margin: 0;
   padding: 200px 0 30px;

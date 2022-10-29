@@ -2,10 +2,61 @@
 {% load wagtailimages_tags wagtailcore_tags %}
 
 {% block content %}
-    <div class="homepage">
-        
-        {% image page.image fill-1920x600 as image %}
-        <div class="container-fluid hero" style="background-image:url('{{ image.url }}')">
+<div class="homepage">
+
+    <!-- {% image page.image fill-1920x600 as image %} -->
+
+    <div class="container" style="margin-bottom: 10px;">
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <a target="_blank" href="#">
+                    <img id="img138409486233" src="https://tpc.googlesyndication.com/simgad/5548998732382668556?" >
+                </a>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-3" style="background-color: wheat; height: 350px;">
+            <p>as;dklhagjshaksd</p>
+            </div>
+
+            <div class="col-md-6" style=" background-color: white; height: 550px;">
+                <div class="ds-flex ds-px-4 ds-border-b ds-border-line ds-py-3">
+                    <div class="ds-flex ds-flex-col ds-grow ds-justify-center"><span
+                            class="ds-text-eyebrow-s ds-font-bold ds-uppercase !ds-font-bold ds-uppercase ds-text-typo-title">Australia
+                            vs England</span><span
+                            class="ds-text-peyebrow-xs ds-uppercase ds-uppercase ds-text-typo-paragraph-light">Men's T20
+                            World Cup 2022, Melbourne</span></div>
+                </div>
+            </div>
+            <div class="col-md-3"style="background-color: wheat; height: 350px;">
+            <p>askdhjagshd</p>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-3" style="background-color: wheat; height: 350px;">
+            <p>as;dklhagjshaksd</p>
+            </div>
+
+            <div class="col-md-6" style=" background-color: white; height: 550px;">
+                <div class="ds-flex ds-px-4 ds-border-b ds-border-line ds-py-3">
+                    <div class="ds-flex ds-flex-col ds-grow ds-justify-center"><span
+                            class="ds-text-eyebrow-s ds-font-bold ds-uppercase !ds-font-bold ds-uppercase ds-text-typo-title">Australia
+                            vs England</span><span
+                            class="ds-text-peyebrow-xs ds-uppercase ds-uppercase ds-text-typo-paragraph-light">Men's T20
+                            World Cup 2022, Melbourne</span></div>
+                </div>
+            </div>
+            <div class="col-md-3"style="background-color: wheat; height: 350px;">
+            <p>askdhjagshd</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container-fluid hero" style="background-image:url('{{ image.url }}')">
             <div class="hero-gradient-mask"></div>
             <div class="container">
                 <div class="row">
@@ -22,9 +73,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="container">
+<!-- <div class="container">
             <div class="row promo-row">
                 <div class="featured-cards col-sm-5 col-sm-offset-1">
                     {% if page.featured_section_1 %}
@@ -59,46 +110,46 @@
                     {% endif %}
                 </div>
             </div>
+        </div> -->
+
+<!-- {% if page.body %}
+<div class="container-fluid streamfield">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 streamfield-column">
+            {{ page.body }}
         </div>
-
-        {% if page.body %}
-            <div class="container-fluid streamfield">
-                <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 streamfield-column">
-                        {{ page.body }}
-                    </div>
-                </div>
-            </div>
-        {% endif %}
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 teams-section">
-                    {% if page.featured_section_2 %}
-                        <h2 class="teams-section__title">{{ page.featured_section_2_title }}</h2>
-                        {% for childpage in page.featured_section_2.specific.children|slice:"3" %}
-                            {% include "includes/card/team-card.html" with page=childpage %}
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
-        {% if page.featured_section_3 %}
-            <div class="blog-section__background">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 blog-section">
-                            <h2 class="blog-section__title">{{ page.featured_section_3_title }}</h2>
-                            <div class="blog-section__grid">
-                                {% for childpage in page.featured_section_3.specific.children|slice:"6" %}
-                                    {% include "includes/card/picture-card.html" with page=childpage portrait=True %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endif %}
     </div>
+</div>
+{% endif %} -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 teams-section">
+            {% if page.featured_section_2 %}
+            <h2 class="teams-section__title">{{ page.featured_section_2_title }}</h2>
+            {% for childpage in page.featured_section_2.specific.children|slice:"3" %}
+            {% include "includes/card/team-card.html" with page=childpage %}
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- {% if page.featured_section_3 %}
+<div class="blog-section__background">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 blog-section">
+                <h2 class="blog-section__title">{{ page.featured_section_3_title }}</h2>
+                <div class="blog-section__grid">
+                    {% for childpage in page.featured_section_3.specific.children|slice:"6" %}
+                    {% include "includes/card/picture-card.html" with page=childpage portrait=True %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %} -->
+</div>
 {% endblock content %}
