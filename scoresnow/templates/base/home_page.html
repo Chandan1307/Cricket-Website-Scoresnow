@@ -5,51 +5,46 @@
 <div class="homepage">
 
     <!-- {% image page.image fill-1920x600 as image %} -->
-
     <div class="container" style="margin-bottom: 10px;">
         <div class="row" style="margin-top: 5px;">
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <a target="_blank" href="#">
-                    <img id="img138409486233" src="https://tpc.googlesyndication.com/simgad/5548998732382668556?" >
+                    <img id="img138409486233" src="https://tpc.googlesyndication.com/simgad/5548998732382668556?">
                 </a>
             </div>
             <div class="col-md-1"></div>
         </div>
         <div class="row" style="margin-top: 20px;">
-            <div class="col-md-3" style="background-color: wheat; height: 350px;">
-            <p>as;dklhagjshaksd</p>
-            </div>
-
-            <div class="col-md-6" style=" background-color: white; height: 550px;">
-                <div class="ds-flex ds-px-4 ds-border-b ds-border-line ds-py-3">
-                    <div class="ds-flex ds-flex-col ds-grow ds-justify-center"><span
-                            class="ds-text-eyebrow-s ds-font-bold ds-uppercase !ds-font-bold ds-uppercase ds-text-typo-title">Australia
-                            vs England</span><span
-                            class="ds-text-peyebrow-xs ds-uppercase ds-uppercase ds-text-typo-paragraph-light">Men's T20
-                            World Cup 2022, Melbourne</span></div>
+            <div class="col-md-2"
+                style="background-color: white; height: 350px; margin-right: 10px; margin-left: 10px;">
+                <div
+                    class="ds-w-full ds-bg-fill-content-prime ds-overflow-hidden ds-rounded-xl ds-border ds-border-line ds-mb-4">
+                    <div class="ds-flex ds-px-4 ds-border-b ds-border-line ds-py-3">
+                        <div class="ds-flex ds-flex-col ds-grow ds-justify-center"><span
+                                class="ds-text-title-subtle-s ds-font-medium ds-text-typo-title">Key Series</span></div>
+                    </div>
+                    <div class="ds-1">
+                        <ul class="ds-2">
+                            {% for s in series %}
+                            <li class="ds-3"><a href="#"
+                                    title="T20 World Cup"
+                                    class="ds-cursor-pointer ds-inline-flex ds-items-center ds-w-full ds-py-1 ds-text-tight-s ds-px-4 ds-bg-ui-fill ds-text-ui-typo ds-flex ds-items-center ds-box-border hover:ds-bg-ui-fill-hover active:ds-bg-ui-fill-primary active:ds-text-raw-white focus:ds-border focus:ds-border-ui-stroke-primary focus:ds-outline-none ds-w-full"><span
+                                        class="ds-pr-2 ds-flex ds-place-content-center"><i style="font-size:20px"
+                                            class="icon-keyboard_arrow_right-filled ds-text-icon-primary"></i></span><span
+                                        class="ds-grow">{{ s.name }}</span></a></li>
+                            {% endfor %}
+                           
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3"style="background-color: wheat; height: 350px;">
-            <p>askdhjagshd</p>
+            <div class="col-md-6"
+                style=" background-color: white; height: 550px; margin-left: 15px; margin-right: 15px;">
+                <p>jsdagjshkfsj</p>
             </div>
-        </div>
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-md-3" style="background-color: wheat; height: 350px;">
-            <p>as;dklhagjshaksd</p>
-            </div>
-
-            <div class="col-md-6" style=" background-color: white; height: 550px;">
-                <div class="ds-flex ds-px-4 ds-border-b ds-border-line ds-py-3">
-                    <div class="ds-flex ds-flex-col ds-grow ds-justify-center"><span
-                            class="ds-text-eyebrow-s ds-font-bold ds-uppercase !ds-font-bold ds-uppercase ds-text-typo-title">Australia
-                            vs England</span><span
-                            class="ds-text-peyebrow-xs ds-uppercase ds-uppercase ds-text-typo-paragraph-light">Men's T20
-                            World Cup 2022, Melbourne</span></div>
-                </div>
-            </div>
-            <div class="col-md-3"style="background-color: wheat; height: 350px;">
-            <p>askdhjagshd</p>
+            <div class="col-md-2" style="background-color:white; height: 350px; margin-left: 10px;">
+            <p>jsdagjshkfsj</p>
             </div>
         </div>
     </div>
