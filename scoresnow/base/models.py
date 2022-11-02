@@ -373,3 +373,4 @@ class FormPage(AbstractEmailForm):
             "Email",
         ),
     ]
+

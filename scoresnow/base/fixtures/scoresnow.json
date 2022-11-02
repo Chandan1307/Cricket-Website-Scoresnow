@@ -1516,7 +1516,7 @@
       "content_type": ["series", "seriespage"],
       "live": true,
       "has_unpublished_changes": false,
-      "url_path": "/home/series/anadama-series/",
+      "url_path": "/series/anadama-series/",
       "owner": null,
       "seo_title": "",
       "show_in_menus": false,

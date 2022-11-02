@@ -16,41 +16,54 @@
             <div class="col-md-1"></div>
         </div>
         <div class="row" style="margin-top: 20px;">
-            <div class="col-md-2"
-                style="background-color: white; height: 350px; margin-right: 10px; margin-left: 10px;">
-                <div
-                    class="ds-w-full ds-bg-fill-content-prime ds-overflow-hidden ds-rounded-xl ds-border ds-border-line ds-mb-4">
-                    <div class="ds-flex ds-px-4 ds-border-b ds-border-line ds-py-3">
-                        <div class="ds-flex ds-flex-col ds-grow ds-justify-center"><span
-                                class="ds-text-title-subtle-s ds-font-medium ds-text-typo-title">Key Series</span></div>
-                    </div>
-                    <div class="ds-1">
-                        <ul class="ds-2">
+            <div class="col-md-3">
+                    <div>
+                        <ul style="padding-left: 10px;">
                             {% for s in series %}
-                            <li class="ds-3"><a href="#"
-                                    title="T20 World Cup"
-                                    class="ds-cursor-pointer ds-inline-flex ds-items-center ds-w-full ds-py-1 ds-text-tight-s ds-px-4 ds-bg-ui-fill ds-text-ui-typo ds-flex ds-items-center ds-box-border hover:ds-bg-ui-fill-hover active:ds-bg-ui-fill-primary active:ds-text-raw-white focus:ds-border focus:ds-border-ui-stroke-primary focus:ds-outline-none ds-w-full"><span
-                                        class="ds-pr-2 ds-flex ds-place-content-center"><i style="font-size:20px"
-                                            class="icon-keyboard_arrow_right-filled ds-text-icon-primary"></i></span><span
-                                        class="ds-grow">{{ s.name }}</span></a></li>
+                            <li>
+                                <a href="{{ s.url }}">{{ s.title }}</a>
+                            </li>
                             {% endfor %}
-                           
                         </ul>
                     </div>
+                
+            </div>
+            <div class="col-md-6">
+                <div style="border-radius: 0.5rem; padding: 10px;">
+                    {% for b in blog %}
+                    <div class="card" style="width: 42rem; height: 35rem; padding: 10px; background-color: white;">
+                        <img src="{{ b.image.file.url }}" class="card-img-top" alt="..." style="border-radius: 0.5rem; height: 420px">
+                        <div class="card-body">
+                        <h3 class="card-title">                        
+                            <a href="{{ b.url }}">{{ b.title }}</a>
+                        </h3>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-            <div class="col-md-6"
-                style=" background-color: white; height: 550px; margin-left: 15px; margin-right: 15px;">
-                <p>jsdagjshkfsj</p>
-            </div>
-            <div class="col-md-2" style="background-color:white; height: 350px; margin-left: 10px;">
-            <p>jsdagjshkfsj</p>
+            <div class="col-md-3">
+                <div>
+                    <ul style="padding-left: 10px;">
+                        {% for t in teams %}
+                        <li>
+                            <a href="{{ t.url }}">{{ t.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-
+                    <!-- <ul style="padding-left: 10px;">
+                        {% for b in blog %}
+                        <li>
+                            <a href="{{ b.url }}">{{ b.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul> -->
 <!-- <div class="container-fluid hero" style="background-image:url('{{ image.url }}')">
             <div class="hero-gradient-mask"></div>
             <div class="container">
@@ -117,7 +130,7 @@
 </div>
 {% endif %} -->
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-12 teams-section">
             {% if page.featured_section_2 %}
@@ -128,7 +141,7 @@
             {% endif %}
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- {% if page.featured_section_3 %}
 <div class="blog-section__background">
