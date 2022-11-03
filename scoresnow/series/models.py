@@ -1,5 +1,8 @@
+from email.policy import default
+from random import choices
 from statistics import mode
 from turtle import title
+from unittest.util import _MAX_LENGTH
 from django import forms
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
@@ -297,6 +300,8 @@ class Match(models.Model):
 
     def __str__(self):
         return self.title
+
+
 
 
 

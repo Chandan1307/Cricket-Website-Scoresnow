@@ -27,6 +27,8 @@ urlpatterns = [
     path("blog/", blog_view),
     path("series/", series_view),
     path("", home_view),
+    # path("series/v1/",include('scoresnow.series.urls')),
+    path("blog/v1/",include('scoresnow.blog.urls'))
 ]
 
 
