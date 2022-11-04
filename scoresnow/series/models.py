@@ -19,6 +19,7 @@ from wagtail.snippets.models import register_snippet
 from scoresnow.base.blocks import BaseStreamBlock
 
 
+
 @register_snippet
 class Country(models.Model):
     """
@@ -239,6 +240,7 @@ class Stadium(models.Model):
         help_text="Which city it belongs to."
     )
     capacity = models.IntegerField(blank=True, null=True)
+    key = models.CharField(max_length=255, blank=True, null=True)
     
 
     def __str__(self):
@@ -265,6 +267,7 @@ class Match(models.Model):
     )
 
     title = models.CharField(max_length=255)
+    name = models.CharField(max_length=255,blank=True, null=True)
     key = models.CharField(max_length=255, blank=True, null=True)
     series = models.ForeignKey(
         SeriesPage,

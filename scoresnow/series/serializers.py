@@ -1,11 +1,13 @@
+from rest_framework import serializers
+from scoresnow.series.models import Stadium
+from scoresnow.series.models import MatchStatus
+from scoresnow.series.models import Match
 
-# from rest_framework import serializers
-# from scoresnow.series.models import Company
 
 
+#create serializers here
+class MatchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Match
+        fields="__all__"
 
-# #create serializers here
-# class CompanySerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model=Company
-#         fields="__all__"
