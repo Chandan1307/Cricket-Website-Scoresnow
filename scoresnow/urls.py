@@ -46,4 +46,5 @@ if settings.DEBUG:
 
 urlpatterns += [
     path("", include(wagtail_urls)),
+    # path("series/", include("scoresnow.series.urls")),
 ]

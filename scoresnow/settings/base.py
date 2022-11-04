@@ -115,8 +115,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "scoresnowdb",
-        "USER": "postgres",
-        "PASSWORD": "0713",
+        "USER": "league11dev",
+        "PASSWORD": "",
         "HOST": "localhost",
         "PORT": 5432,
     },
