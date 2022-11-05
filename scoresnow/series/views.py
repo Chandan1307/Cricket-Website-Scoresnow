@@ -1,27 +1,26 @@
+import imp
+from django.http import HttpResponse
 
-# import logging
-
-# from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
-# from django.db.models import Sum
-# from django.shortcuts import render
-# from django.views.generic import TemplateView
-# from rest_framework.authtoken.models import Token
+from django.shortcuts import render
+from scoresnow.series.models import Match, SeriesPage
+from scoresnow.series.serializers import MatchSerializer
+from rest_framework import viewsets
 
 
-# logger = logging.getLogger("justicepoker")
+# from rest_framework import viewsets
+# from scoresnow.series.models import Company
+# from scoresnow.series.serializers import CompanySerializer
 
-# # Create your views here.
-# class HomePageView(TemplateView):
-#     template_name = "home/index.html"
 
-#     def get(self, request, format=None, **kwargs):
-#         try:
-#             link = DynamicSettings.objects.get(key="ANDROID_APP_LINK").value
-#         except ObjectDoesNotExist:
-#             link = ""
-#         except MultipleObjectsReturned:
-#             link = ""
 
-#         return render(request, self.template_name, context={
-#             "android_app_link": link
-#         })
+def series_view(request):
+    post_objs = SeriesPage.objects.all()
+    ctx = {
+        "series": post_objs
+    }
+    return render(request, "series/series_index_page.html", context=ctx)
+
+
+class MatchViewSet(viewsets.ModelViewSet):
+    queryset = Match.objects.all()
+    serializer_class = MatchSerializer

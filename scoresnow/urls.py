@@ -7,18 +7,29 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.documents import urls as wagtaildocs_urls
 
+
 from scoresnow.search import views as search_views
 
 from .api import api_router
+from scoresnow.blog.views import blog_view
+from scoresnow.series.views import series_view
+from scoresnow.base.views import home_view
+
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
-    path("sitemap.xml", sitemap),
+    # path("sitemap.xml", sitemap),
     path("api/v2/", api_router.urls),
     path("__debug__/", include(debug_toolbar.urls)),
+    path("blog/", blog_view),
+    path("series/", series_view),
+    path("", home_view),
+    # path("series/v1/",include('scoresnow.series.urls')),
+    path("blog/v1/",include('scoresnow.blog.urls')),
+    path("series/v1/",include('scoresnow.series.urls')),
 ]
 
 
