@@ -1,7 +1,6 @@
-from os import access
+from scoresnow.series.models import Match, Stadium, Country, City
+from django.conf import Settings
 import requests
-
-from scoresnow.series.models import Match
 
 
 def get_access_token():
@@ -21,58 +20,37 @@ def get_access_token():
     return access_token
 
 
-class LitzMatch():
+def get_matches(self):
+    data = []
+    access_token = get_access_token()
+    url = "https://rest.cricketapi.com/rest/v2/schedule/?access_token={}".format(access_token)
+    response = requests.post(url, data=data)
 
-    def get_matches(self):
-        data = []
-        access_token = get_access_token()
-        url = "https://rest.cricketapi.com/rest/v2/schedule/?access_token={}".format(access_token)
-        response = requests.post(url, data=data)
+    result = response.json()
+    schedule = result["data"]["months"][0]["days"]
 
-        result = response.json()
-        schedule = result["data"]["months"][0]["days"]
+    for day in schedule:
+        day_matches = day["matches"]
 
-        for day in schedule:
-            day_matches = day["matches"]
-
-            for litz_match in day_matches:
-                match = Match.objects.get_or_create(key=litz_match.get("key"))
-
-                match.name = litz_match.get("name")
-                match.country = litz_match.get("country")
-                match.city = litz_match.get("city")
-                match.start_date = litz_match.get("start_date")
-                match.title = litz_match.get("title")
-
-                match.save()
-
-
-        data = response.json()
-        return data
-        
-    def get_matches_details(self):
-        data =[]
-        access_token = get_access_token()
-        url = "https://rest.cricketapi.com/rest/v2/schedule/?access_token={}".format(access_token)
-        response = requests.post(url, data=data)
-
-        data = response.json()
-        return data
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        for litz_match in day_matches:
+            match, created = Match.objects.get_or_create(key=litz_match["key"])
+            stadium, created = Stadium.objects.get_or_create(key=litz_match["stadium"]["key"])
+            country, created = Country.objects.get_or_create(name=litz_match["stadium"]["country"])
+            city, created = City.objects.get_or_create(name=litz_match["stadium"]["city"])
+            
+            
+            try:
+                match.name = litz_match["name"]
+                stadium.name = litz_match["stadium"]["name"]
+                stadium.city = city
+                stadium.country = country
+            except:
+                import ipdb
+                ipdb.set_trace()
+                pass
+            
+            match.title = litz_match.get("title")
+            
+            stadium.save()
+            match.save()
 
